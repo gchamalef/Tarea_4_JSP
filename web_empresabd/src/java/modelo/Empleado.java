@@ -39,23 +39,6 @@ public class Empleado extends Persona {
         this.codigo = codigo;
     }
     
-    public HashMap drop_sangre(){
-        HashMap<String,String> drop = new HashMap();
-        try{
-            cn = new Conexion();
-            String query = "select id_puesto as id, puesto from db_empresa.puestos;";
-            cn.abrir_conexion();
-            ResultSet consulta = cn.conexionBD.createStatement().executeQuery(query);
-            while(consulta.next()){
-                drop.put(consulta.getString("id"), consulta.getString("puesto"));
-            }
-            cn.cerrar_conexion();
-        } catch(SQLException ex){
-            System.out.println(ex.getMessage());
-        }
-        return drop;
-    }
-    
     @Override
     public void agregar(){}
 }

@@ -3,7 +3,7 @@
     Created on : 29 sept 2023, 00:10:14
     Author     : pc01
 --%>
-<%@page import="modelo.Empleado" %>
+<%@page import="modelo.Puesto" %>
 <%@page import="java.util.HashMap" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -33,8 +33,8 @@
                 <label for="lbl_puesto"><b>Puesto:</b></label>
                 <select name="drop_puesto" id="drop_puesto" class="form-control">
                     <%
-                        Empleado empleado = new Empleado();
-                        HashMap<String,String> drop = empleado.drop_sangre();
+                        Puesto puesto = new Puesto();
+                        HashMap<String,String> drop = puesto.drop_sangre();
                         for(String i: drop.keySet()){
                         out.println("<option value='" + i + "' >" + drop.get(i) + "</option>");
                         }
